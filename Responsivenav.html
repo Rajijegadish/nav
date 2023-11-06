@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body{
+            margin:0;
+            padding: 0;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background-image: url("file:///C:/Users/2302672/Downloads/Personal/image/tree.jpg");
+            background-size: cover;
+            background-repeat:no;
+            margin-bottom: 70px;
+            height:100vh;
+        }   
+    
+        nav{
+            background-color: bisque;
+            font-size:20px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            color:darkmagenta;
+        }
+        nav li{
+            display: inline-block;
+            margin: 0 8px;
+           
+        }
+        nav a{
+            text-decoration: none;
+        }
+        .toggle{
+            font-size: 35px;
+            font-weight: bolder;
+            color:darkmagenta;
+        }
+        nav a:hover{
+            color:green;
+        }
+        .menu-line{
+            height: 3px;
+            width: 20px;
+            background-color:darkmagenta ;
+            margin-bottom: 3px;
+        }
+        .menu{
+            cursor: pointer;
+            display:none;
+
+        }
+        @media all and (max-width:650px){
+            nav {
+                flex-direction: column;
+            }
+            nav li{
+                display: block;
+                padding: 10px 0;
+            }
+            ul{
+                text-align: center;
+                padding: 0;
+                display: none;
+            }
+            .toggle{
+                align-self:flex-start;
+                margin:10px 0 0 30px;
+            }
+            .menu{
+                display:block;
+                position:absolute;
+                right:20px;
+                top:25px;
+            }
+            .showmenu{
+                display:block;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar fixed-top">
+        <div class="toggle">
+            <a href="#">PraRoz</a>
+        </div>
+        <ul>
+            <li><a herf="#">Home</a></li>
+            <li><a herf="#">About</a></li>
+            <li><a herf="#">Service</a></li>
+            <li><a herf="#">Contact</a></li>
+        </ul>
+        <div class="menu">
+            <div class="menu-line"></div>
+            <div class="menu-line"></div>
+            <div class="menu-line"></div>
+        </div>
+    </nav>
+    <div class="container">
+    </div>
+</body>
+<script>
+ const menu= document.querySelector('.menu');
+ const menulist=document.querySelector('nav ul');
+ menu.addEventListener('click',()=>{
+    menulist.classList.toggle('showmenu')
+ })
+</script>
+</html>
